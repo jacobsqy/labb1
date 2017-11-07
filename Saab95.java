@@ -10,4 +10,13 @@ public class Saab95 extends Car {
         modelName = "Saab95";
         stopEngine();
       }
+      public void move() {
+
+      }
+      public void turnRight() {
+
+      }
+      public void turnLeft() {
+
+      }
 }

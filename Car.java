@@ -1,5 +1,5 @@
 import java.awt.*;
-public abstract class Car {
+public abstract class Car implements Movable {
   protected int nrDoors;
   protected double enginePower;
   protected double currentSpeed;
@@ -8,6 +8,23 @@ public abstract class Car {
   protected boolean turboOn;
   protected double trimFactor;
   protected double turboPower;
+
+  //MOVABLE VARS
+  private double xPos;
+  private double yPos;
+  private double direction;
+
+
+  //MOVABLE METHODS
+  public void move() {
+    xPos += dx;
+    yPos += dy;
+  }
+
+  public turnLeft() {
+
+  }
+
 
   private double speedFactor() {
     double turbo = 1;
