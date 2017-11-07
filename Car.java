@@ -17,12 +17,15 @@ public abstract class Car implements Movable {
 
   //MOVABLE METHODS
   public void move() {
-    xPos += dx;
-    yPos += dy;
+
   }
 
   public turnLeft() {
 
+  }
+
+  public turnRight() {
+    
   }
 
 
