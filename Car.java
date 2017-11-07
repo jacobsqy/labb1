@@ -1,13 +1,13 @@
 import java.awt.*;
-public class Car {
-  private int nrDoors;
-  private double enginePower;
-  private double currentSpeed;
-  private Color color;
-  private String modelName;
-  private boolean turboOn;
-  private double trimFactor;
-  private double turboPower;
+public abstract class Car {
+  protected int nrDoors;
+  protected double enginePower;
+  protected double currentSpeed;
+  protected Color color;
+  protected String modelName;
+  protected boolean turboOn;
+  protected double trimFactor;
+  protected double turboPower;
 
   private double speedFactor() {
     double turbo = 1;
