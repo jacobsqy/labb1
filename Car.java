@@ -4,7 +4,19 @@ public class Car {
   public double currentSpeed;
   public Color color;
   public String modelName;
+  public boolean turbo;
 
+
+
+
+
+
+
+
+  /*GETTERS AND SETTERS*/
+  public boolean getTurbo() {
+    return turbo;
+  }
   public int getNrDoors(){
       return nrDoors;
   }
@@ -31,5 +43,5 @@ public class Car {
   public void stopEngine(){
     currentSpeed = 0;
   }
-  
+
 }
