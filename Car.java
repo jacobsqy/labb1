@@ -1,17 +1,13 @@
+import java.awt.*;
 public class Car {
   public int nrDoors;
   public double enginePower;
   public double currentSpeed;
   public Color color;
   public String modelName;
-  public double turbo;
   public boolean turboOn;
   public double trimFactor;
   public double turboPower;
-  public boolean turbo;
-
-
-
 
   public double speedFactor() {
     double turbo = 1;
@@ -20,14 +16,14 @@ public class Car {
   }
 
   public void incrementSpeed(double amount){
-    currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower)
+    currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
   }
   public void decrementSpeed(double amount){
       currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
   }
   /*GETTERS AND SETTERS*/
   public void setTurboOn() {
-    turboOn = true;
+    turboOn = getTurbo(); // set the turbo to true if the car has a turbo
   }
   public void setTurboOff() {
     turboOn = false;

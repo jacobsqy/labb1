@@ -1,6 +1,6 @@
-import java.awt.*;
 
-public class Volvo240{
+
+public class Volvo240 extends Car {
 
 
   public Volvo240(){
