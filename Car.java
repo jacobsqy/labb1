@@ -15,12 +15,22 @@ public class Car {
     return enginePower * 0.01 * trimFactor * turbo;
   }
 
+
+// TODO fix this method according to lab pm
+  public void gas(double amount){
+      incrementSpeed(amount);
+    }
+    // TODO fix this method according to lab pm
+    public void brake(double amount){
+        decrementSpeed(amount);
+    }
   public void incrementSpeed(double amount){
     currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
   }
   public void decrementSpeed(double amount){
       currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
   }
+
   /*GETTERS AND SETTERS*/
   public void setTurboOn() {
     turboOn = getTurbo(); // set the turbo to true if the car has a turbo
