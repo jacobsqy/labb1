@@ -33,11 +33,17 @@ public abstract class Car implements Movable {
 
 // TODO fix this method according to lab pm
   public void gas(double amount){
-      incrementSpeed(amount);
+    if (1.0 < amount || amount < 0.0) {
+      throw new Exception("Invalid amount");
+    }
+    incrementSpeed(amount);
   }
   // TODO fix this method according to lab pm
   public void brake(double amount){
-      decrementSpeed(amount);
+    if (1.0 < amount || amount < 0.0) {
+      throw new Exception("Invalid amount");
+    }
+    decrementSpeed(amount);
   }
 
 
@@ -45,7 +51,7 @@ public abstract class Car implements Movable {
     currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
   }
   private void decrementSpeed(double amount){
-      currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+    currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
   }
 
   public void startEngine(){
