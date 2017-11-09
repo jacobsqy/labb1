@@ -90,6 +90,14 @@ public abstract class Car implements Movable {
     color = clr;
   }
 
+  public double getXPos() {
+    return xPos;
+  }
+
+  public double getYPos() {
+    return yPos;
+  }
+
   /*public void incrementSpeed(double amount){
       currentSpeed = getCurrentSpeed() + speedFactor() * amount;
   }
