@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.Exception;
 public abstract class Car implements Movable {
   protected int nrDoors;
   protected double enginePower;
@@ -31,19 +32,25 @@ public abstract class Car implements Movable {
     return enginePower * 0.01 * trimFactor * turbo;
   }
 
-// TODO fix this method according to lab pm
-  public void gas(double amount){
-    if (1.0 < amount || amount < 0.0) {
-      throw new Exception("Invalid amount");
+  public void gas(double amount) {
+    try {
+      if (1.0 < amount || amount < 0.0) {
+        throw new Exception("Invalid amount");
+      }
+      incrementSpeed(amount);
+    } catch(Exception e) {
+      System.err.println(e.getMessage());
     }
-    incrementSpeed(amount);
   }
-  // TODO fix this method according to lab pm
-  public void brake(double amount){
-    if (1.0 < amount || amount < 0.0) {
-      throw new Exception("Invalid amount");
+  public void brake(double amount) {
+    try {
+      if (1.0 < amount || amount < 0.0) {
+        throw new Exception("Invalid amount");
+      }
+      decrementSpeed(amount);
+    } catch(Exception e) {
+      System.err.println(e.getMessage());
     }
-    decrementSpeed(amount);
   }
 
 
