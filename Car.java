@@ -19,7 +19,7 @@ public abstract class Car implements Movable {
     yPos += currentSpeed;
   }
   public turnLeft() {
-    xPos += -1 * currentSpeed;
+    xPos = xPos + (-1 * currentSpeed);
   }
   public turnRight() {
     xPos += currentSpeed;
