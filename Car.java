@@ -12,17 +12,17 @@ public abstract class Car implements Movable {
   //MOVABLE VARS
   private double xPos;
   private double yPos;
-  private double direction;
 
 
   //MOVABLE METHODS
   public void move() {
-    xPos += dx;
-    yPos += dy;
+    yPos += currentSpeed;
   }
-
   public turnLeft() {
-
+    xPos += -1 * currentSpeed;
+  }
+  public turnRight() {
+    xPos += currentSpeed;
   }
 
 
