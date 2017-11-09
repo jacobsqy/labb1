@@ -4,6 +4,6 @@ public class Test {
     Car car2 = new Volvo240();
     car1.startEngine();
     car1.gas(.9);
-    System.out.println(car1.getCurrentSpeed());
+    System.out.println(car1.getCurrentSpeed()); // returns 1.225
   }
 }
