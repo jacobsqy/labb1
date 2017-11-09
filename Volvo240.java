@@ -9,13 +9,4 @@ public class Volvo240 extends Car {
         trimFactor = 1.25;
         turboPower = 1.0;
     }
-    public void move() {
-
-    }
-    public void turnRight() {
-
-    }
-    public void turnLeft() {
-
-    }
 }
