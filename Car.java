@@ -25,7 +25,6 @@ public abstract class Car implements Movable {
     xPos += currentSpeed;
   }
 
-
   private double speedFactor() {
     double turbo = 1;
     if(turboOn) turbo = turboPower;
