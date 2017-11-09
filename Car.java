@@ -36,8 +36,9 @@ public abstract class Car implements Movable {
     try {
       if (1.0 < amount || amount < 0.0) {
         throw new Exception("Invalid amount");
-      }
+      } else {
       incrementSpeed(amount);
+      }
     } catch(Exception e) {
       System.err.println(e.getMessage());
     }
@@ -46,8 +47,9 @@ public abstract class Car implements Movable {
     try {
       if (1.0 < amount || amount < 0.0) {
         throw new Exception("Invalid amount");
+      } else {
+        decrementSpeed(amount);
       }
-      decrementSpeed(amount);
     } catch(Exception e) {
       System.err.println(e.getMessage());
     }
