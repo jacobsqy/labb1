@@ -43,6 +43,7 @@ public abstract class Car implements Movable {
       System.err.println(e.getMessage());
     }
   }
+
   public void brake(double amount) {
     try {
       if (1.0 < amount || amount < 0.0) {
@@ -56,17 +57,17 @@ public abstract class Car implements Movable {
   }
 
 
-  private void incrementSpeed(double amount){
+  private void incrementSpeed(double amount) {
     currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
   }
-  private void decrementSpeed(double amount){
+  private void decrementSpeed(double amount) {
     currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
   }
 
-  public void startEngine(){
+  public void startEngine() {
     currentSpeed = 0.1;
   }
-  public void stopEngine(){
+  public void stopEngine() {
     currentSpeed = 0;
   }
 
@@ -83,19 +84,19 @@ public abstract class Car implements Movable {
   public int getNrDoors(){
       return nrDoors;
   }
-  public double getEnginePower(){
+  public double getEnginePower() {
       return enginePower;
   }
 
-  public double getCurrentSpeed(){
+  public double getCurrentSpeed() {
       return currentSpeed;
   }
 
-  public Color getColor(){
+  public Color getColor() {
       return color;
   }
 
-  public void setColor(Color clr){
+  public void setColor(Color clr) {
     color = clr;
   }
 
@@ -106,13 +107,4 @@ public abstract class Car implements Movable {
   public double getYPos() {
     return yPos;
   }
-
-  /*public void incrementSpeed(double amount){
-      currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-  }
-
-  public void decrementSpeed(double amount){
-      currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-  }*/
-
 }
