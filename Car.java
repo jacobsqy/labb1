@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.Exception;
 public abstract class Car implements Movable {
   protected int nrDoors;
   protected double enginePower;
@@ -12,22 +13,30 @@ public abstract class Car implements Movable {
   //MOVABLE VARS
   private double xPos;
   private double yPos;
-  private double direction;
 
 
   //MOVABLE METHODS
   public void move() {
+<<<<<<< HEAD
 
+=======
+    yPos += currentSpeed;
+>>>>>>> d1047610bc6398ae271ec1ea77083efca4626033
   }
-
-  public turnLeft() {
-
+  public void turnLeft() {
+    xPos = xPos + (-1 * currentSpeed);
   }
+  public void turnRight() {
+    xPos += currentSpeed;
+  }
+<<<<<<< HEAD
 
   public turnRight() {
     
   }
 
+=======
+>>>>>>> d1047610bc6398ae271ec1ea77083efca4626033
 
   private double speedFactor() {
     double turbo = 1;
@@ -35,27 +44,42 @@ public abstract class Car implements Movable {
     return enginePower * 0.01 * trimFactor * turbo;
   }
 
-// TODO fix this method according to lab pm
-  public void gas(double amount){
+  public void gas(double amount) {
+    try {
+      if (1.0 < amount || amount < 0.0) {
+        throw new Exception("Invalid amount");
+      } else {
       incrementSpeed(amount);
+      }
+    } catch(Exception e) {
+      System.err.println(e.getMessage());
+    }
   }
-  // TODO fix this method according to lab pm
-  public void brake(double amount){
-      decrementSpeed(amount);
+
+  public void brake(double amount) {
+    try {
+      if (1.0 < amount || amount < 0.0) {
+        throw new Exception("Invalid amount");
+      } else {
+        decrementSpeed(amount);
+      }
+    } catch(Exception e) {
+      System.err.println(e.getMessage());
+    }
   }
 
 
-  private void incrementSpeed(double amount){
+  private void incrementSpeed(double amount) {
     currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
   }
-  private void decrementSpeed(double amount){
-      currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+  private void decrementSpeed(double amount) {
+    currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
   }
 
-  public void startEngine(){
+  public void startEngine() {
     currentSpeed = 0.1;
   }
-  public void stopEngine(){
+  public void stopEngine() {
     currentSpeed = 0;
   }
 
@@ -72,28 +96,27 @@ public abstract class Car implements Movable {
   public int getNrDoors(){
       return nrDoors;
   }
-  public double getEnginePower(){
+  public double getEnginePower() {
       return enginePower;
   }
 
-  public double getCurrentSpeed(){
+  public double getCurrentSpeed() {
       return currentSpeed;
   }
 
-  public Color getColor(){
+  public Color getColor() {
       return color;
   }
 
-  public void setColor(Color clr){
+  public void setColor(Color clr) {
     color = clr;
   }
 
-  /*public void incrementSpeed(double amount){
-      currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+  public double getXPos() {
+    return xPos;
   }
 
-  public void decrementSpeed(double amount){
-      currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-  }*/
-
+  public double getYPos() {
+    return yPos;
+  }
 }
