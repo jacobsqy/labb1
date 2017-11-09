@@ -17,11 +17,7 @@ public abstract class Car implements Movable {
 
   //MOVABLE METHODS
   public void move() {
-<<<<<<< HEAD
-
-=======
     yPos += currentSpeed;
->>>>>>> d1047610bc6398ae271ec1ea77083efca4626033
   }
   public void turnLeft() {
     xPos = xPos + (-1 * currentSpeed);
@@ -29,14 +25,6 @@ public abstract class Car implements Movable {
   public void turnRight() {
     xPos += currentSpeed;
   }
-<<<<<<< HEAD
-
-  public turnRight() {
-    
-  }
-
-=======
->>>>>>> d1047610bc6398ae271ec1ea77083efca4626033
 
   private double speedFactor() {
     double turbo = 1;
